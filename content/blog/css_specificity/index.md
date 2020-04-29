@@ -24,7 +24,7 @@ CSSの詳細度を高い順に並べると、下記の通りになります。
 !importantは、最も詳細度が高くなる宣言です。
 なるべく使用を避けるべきとされています。
 
-```
+```CSS:test.js
 p {
  color: red !important;
  color: blue;
