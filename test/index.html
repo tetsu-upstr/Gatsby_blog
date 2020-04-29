@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>chart</title>
+</head>
+<body>
+  <canvas id="my_chart"></canvas>
+
+   <!-- Chart.js CDN -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+   <script>
+     (function() {
+       'use strict';
+
+       let type = 'bar';
+
+       let data = {
+         labels: [2010, 2011, 2012, 2013],
+         datasets: [
+         {
+           label: 'sales',
+           data: [120, 300, 200, 210],
+           yAxesID: 'sales_axes'
+         },
+         {
+           label: 'subscriber',
+           data: [902, 1323, 1433, 1889],
+           type: 'line',
+           fill: false,
+           yAxesID: 'subscribers_axes'
+         }
+        ]
+       };
+
+       let options = {
+         scales: {
+          //  縦軸の設定
+           yAxes: [{
+             ticks: {
+              //  min: 0, // 最小値と最大値
+              //  max: 400
+              suggestedMin: 0,
+              saggestedMax: 400, // 数値が超えても調整してくれる
+              // stepSize: 100, // 100刻みにしてくれる
+              // callback: function(value, index, values) {
+              //   return 'JPY ' + value; // 単位をつける
+              // }
+             },
+             id: 'sales_axes',
+             type: 'linear',
+             position: 'left'
+            }, {
+              ticks: {
+                suggestedMin: 0,
+                saggestedMax: 2000, 
+              },
+              id: 'subscribers_axes',
+              type: 'linear',
+              position: 'right'
+            }]
+         },
+         // グラフタイトルの設定
+         title: { 
+            display: true,
+            text: 'Annual Salse',
+            fontSize: 18,
+            // position: 'left' // 横に配置も可能（デフォルトは上）
+         },
+         animation: {
+          //  duration: 0 // アニメーションをオフにする
+         },
+         legend: {
+          //  position: 'right' // 凡例を右に
+          // display: false // 凡例を消す
+         }
+       };
+
+       let ctx = document.getElementById('my_chart').getContext('2d');
+       let myChart = new Chart(ctx, {
+         type: type,
+         data: data,
+         options: options
+       });
+
+     })();
+   </script>
+</body>
+</html>
