@@ -73,5 +73,21 @@ a[target="_blank"] {
 }
 ```
 
+```
+"name": "theme-no-namae",
+  "displayName": "テーマの名前",
+  "version": "1.0.0",
+  "publisher": "Publisher名",
+  "description": "テーマの説明",
+  "icon": "アイコン画像.png",
+  "engines": {
+    "vscode": "*"
+  },
+  "galleryBanner": {
+    "color": "#353042",
+    "theme": "dark"
+  }
+```
+
 ### 5.要素型セレクタ・擬似要素
 要素型セレクタは、
