@@ -3,4 +3,4 @@ import "typeface-montserrat"
 import "typeface-merriweather"
 
 // コードブロックのハイライトテーマ(prism.js)
-import "prismjs/themes/prism-solarizedlight.css"
+require("./src/style/prism-original.css")
