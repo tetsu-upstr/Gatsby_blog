@@ -40,7 +40,7 @@ style属性とは、htmlの中にインライン記述するCSSのスタイル�
 IDセレクタは、1ページに対して1度しか使えない固有のセレクタです。
 JavaScriptを使う場合に割り当てることがありますが、詳細度が高いのでCSSでの使用は控えるべきとされています。
 
-```
+```CSS:test.js
 /* ID */
 #box {
  color: red;
@@ -52,21 +52,21 @@ JavaScriptを使う場合に割り当てることがありますが、詳細度�
 
 詳細度が同じなので、後から書いたものが優先されます。
 
-```
+```CSS:test.js
 /* クラス */
 .box {
  color: red;
 }
 ```
 
-```
+```CSS:test.js
 /* 属性 */
 a[target="_blank"] {
  color: red;
 }
 ```
 
-```
+```CSS:test.js
 /* 擬似クラス */
 .box:hover {
  color: red;
