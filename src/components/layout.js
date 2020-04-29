@@ -1,9 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 
-// コードブロックのハイライトテーマ(prism.js)
-import "prismjs/themes/prism-tomorrow.css";
-
 import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
