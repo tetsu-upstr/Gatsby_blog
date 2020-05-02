@@ -9,23 +9,35 @@ const Layout = ({ location, title, children }) => {
 
   if (location.pathname === rootPath) {
     header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
+      <div>
+        <header>
+          <h1
+            style={{
+              ...scale(1.5),
+              marginBottom: rhythm(1.5),
+              marginTop: 0,
+            }}
+          >
+            <Link
+              style={{
+                boxShadow: `none`,
+                color: `inherit`,
+              }}
+              to={`/`}
+            >
+              {title}
+            </Link>
+          </h1>
+          <nav>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/blogindex">Blog</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+            </ul>
+            </nav>
+        </header>
+      </div>
     )
   } else {
     header = (
