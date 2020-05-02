@@ -1,6 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
+// グローバルヘッダー
+import Header from '../components/header'
+
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,6 +14,7 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
+    <Header />
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />

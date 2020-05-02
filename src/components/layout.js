@@ -9,8 +9,6 @@ const Layout = ({ location, title, children }) => {
 
   if (location.pathname === rootPath) {
     header = (
-      <div>
-        <header>
           <h1
             style={{
               ...scale(1.5),
@@ -28,16 +26,6 @@ const Layout = ({ location, title, children }) => {
               {title}
             </Link>
           </h1>
-          <nav>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/blogindex">Blog</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-            </ul>
-            </nav>
-        </header>
-      </div>
     )
   } else {
     header = (
