@@ -34,3 +34,13 @@ const WorksPage = ({ data, location }) => {
 }
 
 export default WorksPage
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
