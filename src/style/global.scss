@@ -1,6 +1,5 @@
 html, body, article, h2, h3, h4, ul, li, ul, a, p {
   letter-spacing: 0.5px;
-  font-weight: normal;
   font-size: 100%;
   font-family: 'Andale Mono','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
   color: #2c3e50;
@@ -25,6 +24,10 @@ header {
       text-decoration: none;
     }
   }
+}
+
+article header h3 {
+  font-weight: bold;
 }
 
 small {

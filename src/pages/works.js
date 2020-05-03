@@ -29,7 +29,7 @@ const WorksPage = ({ data, location }) => {
         <p>賞味期限を管理するためのwebアプリケーションです。</p>
         <p>「CRUD」の練習で作成しました。</p>
         <p><a href="https://upstr.me/freshness/login.php">KEEP FRESH</a></p>
-        <img src="../img/keep_fresh_demo.png"></img>
+        <img src="./img/keep_fresh_demo.png"></img>
         <h4>実装機能</h4>
         <ul>
           <li>商品の登録、編集、削除（PHP）</li>
