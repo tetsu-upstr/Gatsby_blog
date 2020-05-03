@@ -17,6 +17,9 @@ const WorksPage = ({ data, location }) => {
       「CRUD」の練習で作成。
 
       <a href="https://upstr.me/freshness/login.php">KEEP FRESH</a>
+
+      <img src="./img/keep_fresh_demo.png"></img>
+
       <h4>実装機能</h4>
       <ul>
         <li>商品の登録、編集、削除（PHP）</li>

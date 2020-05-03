@@ -1,4 +1,4 @@
-html, body, ul, li, ul, a, p {
+html, body, article, h2, h3, h4, ul, li, ul, a, p {
   letter-spacing: 0.5px;
   font-weight: normal;
   font-size: 100%;
@@ -9,7 +9,7 @@ html, body, ul, li, ul, a, p {
 header {
   width: 100%;
   display: flex;
-  h1 {
+  h1, h2, h3 {
     margin: 0;
   }
   a {
