@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from "gatsby"
+import Styles from "./header.module.scss"
 
 const Header = () =>{
     return(
-        <header>
+        <header className={Styles.txt}>
             <h1>upstr web</h1>
             <nav>
                 <ul>
