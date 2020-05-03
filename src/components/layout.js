@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
+  // const rootPath = `${__PATH_PREFIX__}/`
   let header
 
   header = (
@@ -13,8 +13,7 @@ const Layout = ({ location, title, children }) => {
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/blogindex">Blog</Link></li>
+          <li><Link to="/works">About</Link></li>
           <li><Link to="/contact">Contact</Link></li>
         </ul>
       </nav>
