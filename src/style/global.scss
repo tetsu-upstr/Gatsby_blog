@@ -9,6 +9,9 @@ html, body, ul, li, ul, a, p {
 header {
   width: 100%;
   display: flex;
+  h1 {
+    margin: 0;
+  }
   a {
     text-decoration: none;
   }
@@ -16,4 +19,14 @@ header {
     list-style: none;
     display: flex;
   }
+  li {
+    margin-left: 20px;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+small {
+  margin-left: 20px;
 }
