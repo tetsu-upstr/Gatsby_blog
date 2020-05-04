@@ -14,7 +14,7 @@ const WorksPage = ({ data, location }) => {
       <section>
         <h3>1.カフェレストランサイト</h3>
         <p>架空の飲食店サイトを作成しました。</p>
-        <p><a href="https://upstr.me/cafe/index.html">demo cage resutaurant</a></p>
+        <p><a href="https://upstr.me/cafe/index.html"><FontAwesomeIcon icon="coffee" />demo cage resutaurant</a></p>
         <h4>実装機能</h4>
         <ul>
           <li>レスポンシブデザイン（CSS）</li>
@@ -29,6 +29,7 @@ const WorksPage = ({ data, location }) => {
         <p>賞味期限を管理するためのwebアプリケーションです。</p>
         <p>「CRUD」の練習で作成しました。</p>
         <p><a href="https://upstr.me/freshness/login.php">KEEP FRESH</a></p>
+        <p><a href="https://upstr.me/freshness/login.php">Git Hub</a></p>
         <img src="./img/keep_fresh_demo.png"></img>
         <h4>実装機能</h4>
         <ul>
