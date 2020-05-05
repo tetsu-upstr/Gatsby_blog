@@ -26,5 +26,18 @@ $ npm i --save @fortawesome/free-regular-svg-icons
 Reactコンポーネントで下記のように記述します。
 
 ```
-<FontAwesomeIcon icon="coffee" />
+// fontawesomeの読み込み
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+const WorksPage = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata.title
+
+  return (
+    <Layout location={location} title={siteTitle}>
+      <section>
+        <h3>1.カフェレストランサイト</h3>
+        <p>架空の飲食店サイトを作成しました。</p>
+        <p><a href="https://upstr.me/cafe/index.html"><FontAwesomeIcon icon={faCoffee} />cafe</a></p>
+
 ```

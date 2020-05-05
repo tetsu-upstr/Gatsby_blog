@@ -1,6 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
 
+// fontawesomeの読み込み
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 const WorksPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
 
@@ -10,11 +14,11 @@ const WorksPage = ({ data, location }) => {
       <p>こちらでは、作成した成果物を公開しています。</p>
 
       <h2>作成したWebサイト・アプリケーション</h2>
-
+      
       <section>
         <h3>1.カフェレストランサイト</h3>
         <p>架空の飲食店サイトを作成しました。</p>
-        <p><a href="https://upstr.me/cafe/index.html"><FontAwesomeIcon icon="coffee" />demo cage resutaurant</a></p>
+        <p><a href="https://upstr.me/cafe/index.html"><FontAwesomeIcon icon={faCoffee} />demo cafe resutaurant</a></p>
         <h4>実装機能</h4>
         <ul>
           <li>レスポンシブデザイン（CSS）</li>
