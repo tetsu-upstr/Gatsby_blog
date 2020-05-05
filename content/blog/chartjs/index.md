@@ -13,16 +13,14 @@ JavaScriptのライブラリ「Chart.js」でグラフを表現する方法に�
 
 ### 利用方法
 「Chart.js」は、GitHubからダウンロードするか、CDNを使うことができます。
-````
-&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"&gt;&lt;/script&gt;
-````
+
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"&gt;&lt;/script>
+```
 
 このように、シンプルで見やすいグラフを描画できます。
 
-<p class="codepen" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="tetsu-k" data-slug-hash="LYEOXxv" data-pen-title="LYEOXxv">See the Pen <a href="https://codepen.io/tetsu-k/pen/LYEOXxv">
-LYEOXxv</a> by tetsu (<a href="https://codepen.io/tetsu-k">@tetsu-k</a>)
-on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+![サンプルグラフ]("sample_chart.png")
 
 htmlは、canvasタグを埋め込むだけでOKです。
 
@@ -30,7 +28,7 @@ htmlは、canvasタグを埋め込むだけでOKです。
 
 CDNでscriptを読み込み、canvasタグを埋め込むだけなので簡単です。
 
-````
+```
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -47,14 +45,14 @@ CDNでscriptを読み込み、canvasタグを埋め込むだけなので簡単�
   <script src="main.js" defer></script>
 </body>
 </html>
-````
+```
 
 ### JavaScript
 「label」でグラフのラベル、「datasets」でデータの数値をそれぞれ設定できます。
 
 グラフカラーは、「backgroundColor」で変更します。
 
-````
+```
 "use strict";
 
 //「月別データ」
@@ -90,11 +88,14 @@ data: mydata,  //表示するデータ
 options: options  //オプション設定
 
 });
-````
+```
 
 「type：」を変更することで、折れ線グラフなど他のグラフに変更することも可能です。
 
-optionsを定義することでグラフの設定を細かく変更することができます。
+### オプションの設定
+
+optionsを定義することで、グラフの設定を細かく変更することができます。
+
 ```
 let options = {
     scales: {
@@ -125,4 +126,82 @@ let options = {
     display: false // falseで凡例を消す
     }
   };
+```
+
+optionで最小値を設定しないと、最小値がグラフメーターから表示されなくなるので注意が必要です。
+
+suggestedMaxで最大値を指定すると、指定した値を超えてもグラフは表示されます。
+
+### SQLの値からグラフを描画する
+
+
+`label`と`data`の配列の値を取得して、SQLの値からグラフを動的に描画することも可能です。
+
+```php:test.php
+<?php
+if(isset($_POST['search'])) {
+  
+  echo
+  '<caption class="table-title">販売実績</caption>
+    <table class="item-table" id="results">
+    <thead>
+      <tr>
+        <th class="sort" data-sort="name"><span>品名</span></th>
+        <th class="sort" data-sort="month"><span>販売月</span></th>
+        <th class="sort" data-sort="amount"><span>数量</span></th>
+        <th><span>単価</span></th>
+        <th class="sort proceeds" data-sort="proceeds"><span>売上金額</span></th>
+        <th><span>店舗</span></th>
+      </tr>
+    </thead>
+    <tbody class="list">';
+
+  foreach($result as $row) {
+    echo '<tr>';
+    echo '<td class="name">' . $row['item_name'] .'</td>';
+    echo '<td class="js-sales_month month"><span>' . $row['sale_month'] .'</span></td>';
+    echo '<td class="amount">' . $row['amount'] .'</td>';
+    echo '<td>' . $row['unit_price'] .'</td>';
+    echo '<td class="js-proceeds proceeds"><span>' . $row['proceeds'] .'</span></td>';
+    echo '<td>' . $row['store'] .'</td>';
+    echo '</tr>';
+  }
+}
+?>
+```
+
+```Javascript:test.js
+var label_month = [];
+var sales_data = [];
+
+// labelsの値を取得
+$('.js-sales_month').each(function(){
+  var amount01 = $(this).find('span').text();
+  label_month.push(amount01);
+})
+
+// dataの値を取得
+$('.js-proceeds').each(function(){
+  var amount02 = $(this).find('span').text();
+  sales_data.push(amount02);
+})
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+
+  // 作成したいチャートタイプ
+  type: 'bar',
+
+  // グラフのデータ
+  data: {
+      // labels: ['1月', '2月', '3月'],
+      labels: label_month,
+
+      datasets: [{
+          label: "販売実績の推移",
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: sales_data
+      }]
+  },
 ```
