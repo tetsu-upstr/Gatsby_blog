@@ -14,7 +14,7 @@ JavaScriptのライブラリ「Chart.js」でグラフを表現する方法に�
 ### 利用方法
 「Chart.js」は、GitHubからダウンロードするか、CDNを使うことができます。
 
-```
+```HTML:title=index.html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"&gt;&lt;/script>
 ```
 
@@ -28,7 +28,7 @@ htmlは、canvasタグを埋め込むだけでOKです。
 
 CDNでscriptを読み込み、canvasタグを埋め込むだけなので簡単です。
 
-```
+```HTML:title=index.html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -52,7 +52,7 @@ CDNでscriptを読み込み、canvasタグを埋め込むだけなので簡単�
 
 グラフカラーは、「backgroundColor」で変更します。
 
-```
+```javascript:title=main.js
 "use strict";
 
 //「月別データ」
@@ -96,7 +96,7 @@ options: options  //オプション設定
 
 optionsを定義することで、グラフの設定を細かく変更することができます。
 
-```
+```javascript:title=main.js
 let options = {
     scales: {
     //  縦軸の設定
@@ -137,7 +137,9 @@ suggestedMaxで最大値を指定すると、指定した値を超えてもグ�
 
 `label`と`data`の配列の値を取得して、SQLの値からグラフを動的に描画することも可能です。
 
-```php:test.php
+phpの記述
+
+```php:title=test.php
 <?php
 if(isset($_POST['search'])) {
   
@@ -170,7 +172,9 @@ if(isset($_POST['search'])) {
 ?>
 ```
 
-```Javascript:test.js
+Javascriptの記述
+
+```javascript:title=main.js
 var label_month = [];
 var sales_data = [];
 
@@ -205,3 +209,5 @@ var chart = new Chart(ctx, {
       }]
   },
 ```
+
+上記の例では、`find`で`span`内のテキストを見つけて、配列へプッシュしています。

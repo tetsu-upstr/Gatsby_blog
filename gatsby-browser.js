@@ -6,4 +6,7 @@ import "typeface-merriweather"
 import "./src/style/global.scss"
 
 // コードブロックのハイライトテーマ(prism.js)
-import "prismjs/themes/prism.css"
+import "prismjs/themes/prism-coy.css"
+
+// コードブロックのタイトル
+import "./src/style/code-block-title.css";
